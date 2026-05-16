@@ -5,9 +5,14 @@
 @deprecated "If deprecated"
 @category "For the category"
 @search-terms "For search terms"
-@complete func-For-completion-with-another-function
+@complete complete-function
 def function [param: type] {
     let internals = "of the function"
 }
+
+def complete-function [spans: list<string>] {
+  [] | where $it not-in $spans
+}
+
 ```
 Use the above as a blueprint!
