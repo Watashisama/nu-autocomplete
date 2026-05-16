@@ -12,27 +12,27 @@ def yazi [
 ] {
   let yazi_path = get-path yazi
   if $version {
-    nu -c $"(yazi_path) -V"
+    nu -c $"($yazi_path) -V"
   }
   if $cwd_file {
-    nu -c $"(yazi_path) --cwd-file"
+    nu -c $"($yazi_path) --cwd-file"
   }
   if $chooser_file {
-    nu -c $"(yazi_path) --chooser-file"
+    nu -c $"($yazi_path) --chooser-file"
   }
   if $clear_cache {
-    nu -c $"(yazi_path) --clear-cache"
+    nu -c $"($yazi_path) --clear-cache"
   }
   if $client_id {
-    nu -c $"(yazi_path) --client-id"
+    nu -c $"($yazi_path) --client-id"
   }
   if $local_events {
-    nu -c $"(yazi_path) --local-events"
+    nu -c $"($yazi_path) --local-events"
   }
   if $remote_events {
-    nu -c $"(yazi_path) --remote-events"
+    nu -c $"($yazi_path) --remote-events"
   }
   if $debug {
-    nu -c $"(yazi_path) --debug"
+    nu -c $"($yazi_path) --debug"
   }
 }
