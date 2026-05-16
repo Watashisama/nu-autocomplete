@@ -1,5 +1,6 @@
 source ../util/get-path.nu
 
+# See https://yazi-rs.github.io/docs/quick-start for a quick starter.
 def yazi [
   --cwd-file        # Write the cwd on exit to this file
   --chooser-file    # Write the selected files to this file on open fired
