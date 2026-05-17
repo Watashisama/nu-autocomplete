@@ -36,4 +36,6 @@ def yazi [
   if $debug {
     nu -c $"($yazi_path) --debug"
   }
+
+  nu -c $"($yazi_path)"
 }

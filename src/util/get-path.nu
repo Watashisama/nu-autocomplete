@@ -1,3 +1,6 @@
+# A which alt made to deal with the `which` problem
+@example "Use of `get-path`" {get-path yazi} --result /usr/bin/yazi
+@example "Use of `which` when `def yazi [] {...}` is present" {which yazi} --result 'repl_entry #1'
 export def get-path [bin: string] {
   $env.PATH
   | each {|stdin|
