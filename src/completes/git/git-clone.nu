@@ -1,0 +1,79 @@
+source init.nu
+
+def "git clone" [
+  url: string
+  path?: string
+  --also-filter-submodules                      # Apply partial clone filters to submodules
+  --bare                                        # Create a bare repository
+  --branch(-b): string                          # Checkout $branch instead of the remote's HEAD
+  --bundle-uri: string                          # A URI for downloading bundles before fetching from origin remote
+  --checkout                                    # Create a checkout
+  --config(-c)                                  # Set config inside the new repository ( key=$value )
+  --depth: string                               # Create a shallow clone of that depth
+  --dissociate                                  # Use --reference only while cloning
+  --filter: string                              # Object filtering
+  --hardlinks                                   # Do use local hardlinks, always copy
+  --ipv4(-4)                                    # Use IPv4 addresses only
+  --ipv6(-6)                                    # Use IPv6 addresses only
+  --jobs(-j): int                               # Number of submodules cloned in parallel
+  --local(-l)                                   # Clone from a local repository
+  --mirror                                      # Create a mirror repository (implies --bare)
+  --no-also-filter-submodules                   # Don't apply partial clone filters to submodules
+  --no-bare                                     # Don't create a bare repository
+  --no-branch                                   # Don't checkout $branch instead of the remote's HEAD
+  --no-bundle-uri                               # Don't use any URI
+  --no-checkout(-n)                             # Don't create a checkout
+  --no-config                                   # Don't set config inside the new repository ( key=$value )
+  --no-depth                                    # Don't create a shallow clone of that depth
+  --no-dissociate                               # Don't use --reference only while cloning
+  --no-filter                                   # Don't object filtering
+  --no-hardlinks                                # Don't use local hardlinks, always copy
+  --no-jobs                                     # Number of submodules cloned in parallel is set to 0
+  --no-mirror                                   # Don't create a mirror repository
+  --no-origin                                   # Don't use $name instead of 'origin' to track upstream
+  --no-progress                                 # Force progress suppresion
+  --no-recurse-submodules                       # Don't initialize submodules in the clone
+  --no-recursive                                # Alias of --no-recurse-submodules
+  --no-reference                                # Don't reference repository
+  --no-reference-if-able                        # Don't reference repository
+  --no-ref-format                               # Don't specify the reference format to use
+  --no-reject-shallow                           # Clone shallow repository
+  --no-remote-submodules                        # Any cloned submodules will not use their remote-tracking branch
+  --no-revision                                 # Don't clone single revision <rev> and check out
+  --no-separate-git-dir                         # Separate git dir from working tree
+  --no-server-option                            # Transmit  the  given string to the server when communicating using protocol version 2. The given string must not contain a (ansi u)NUL(ansi reset) or (ansi u)LF(ansi reset) character.
+  --no-shallow-exclude                          # Don't deepen history of shallow clone
+  --no-shallow-since                            # Don't create a shallow clone since a specific time
+  --no-shallow-submodules                       # Any cloned submodules will not be shallow
+  --no-single-branch                            # Don't clone only one branch, HEAD or --branch
+  --no-sparse                                   # Don't Initialize sparse-checkout file to include only files at root
+  --no-tags                                     # Don't clone tags, and make later fetches not to follow them
+  --no-template                                 # Don't use a directory from which templates will be used
+  --no-upload-pack                              # No path to git-upload-pack on the remote
+  --no-verbose                                  # Don't be verbose
+  --origin(-o): string                          # Use $name instead of 'origin' to track upstream
+  --progress                                    # Force progress reporting
+  --quiet(-q)                                   # Be more quiet
+  --recurse-submodules: list<string>            # Initialize submodules in the clone
+  --recursive: list<string>                     # Alias of --recurse-submodules
+  --reference: string                           # Reference repository
+  --reference-if-able: string                   # Reference repository
+  --ref-format: string@[ "files", "reftable" ]  # Specify the reference format to use
+  --reject-shallow                              # Don't clone shallow repository
+  --remote-submodules                           # Any cloned submodules will use their remote-tracking branch
+  --revision: string                            # Clone single revision <rev> and check out
+  --separate-git-dir: string                    # Separate git dir from working tree
+  --server-option: string                       # Transmit  the  given string to the server when communicating using protocol version 2. The given string must not contain a (ansi u)NUL(ansi reset) or (ansi u)LF(ansi reset) character.
+  --shallow-exclude: string                     # Deepen history of shallow clone, excluding ref
+  --shallow-since: string                       # Create a shallow clone since a specific time
+  --shallow-submodules                          # Any cloned submodules will be shallow
+  --single-branch                               # Clone only one branch, HEAD or --branch
+  --sparse                                      # Initialize sparse-checkout file to include only files at root
+  --tags                                        # Clone tags, and make later fetches not to follow them
+  --template: string                            # Directory from which templates will be used
+  --upload-pack(-u): string                     # Path to git-upload-pack on the remote
+  --verbose(-v)                                 # Be more verbose
+  --shared(-s)                                  # Setup as shared repository
+] {
+  nu -c $"($gitpath) clone ($url) ($path)"
+}

@@ -1,21 +1,10 @@
-source ../util/get-path.nu
+source .../util/get-path.nu
 
 let gitpath = get-path git
-def git [] {
-  nu -c $gitpath
-}
 
-def "git clone" [url: string] {
-  nu -c $"($gitpath) clone ($url)"
-}
 
-def "git init" [path?: string] {
-  nu -c $"($gitpath) init ($path)"
-}
 
-def "git add" [...files: string] {
-  nu -c $"($gitpath) add (...($files))"
-}
+
 # usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
 #            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
 #            [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
