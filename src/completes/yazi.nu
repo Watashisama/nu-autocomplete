@@ -13,6 +13,10 @@ def yazi [
   if $version {
     ^yazi --version
   }
+  if $debug {
+    ^yazi --debug
+    return 0;
+  }
   if $cwd_file {
     ^yazi --cwd-file
   }
@@ -30,9 +34,6 @@ def yazi [
   }
   if $remote_events {
     ^yazi --remote-events
-  }
-  if $debug {
-    ^yazi --debug
   }
 
   ^yazi
