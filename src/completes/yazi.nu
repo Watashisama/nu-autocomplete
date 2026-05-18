@@ -1,5 +1,3 @@
-source ../util/get-path.nu
-
 # See https://yazi-rs.github.io/docs/quick-start for a quick starter.
 def yazi [
   --cwd-file        # Write the cwd on exit to this file
@@ -11,31 +9,31 @@ def yazi [
   --debug           # Print debug information
   --version(-V)     # Print version
 ] {
-  let yazi_path = get-path yazi
+
   if $version {
-    nu -c $"($yazi_path) -V"
+    ^yazi --version
   }
   if $cwd_file {
-    nu -c $"($yazi_path) --cwd-file"
+    ^yazi --cwd-file
   }
   if $chooser_file {
-    nu -c $"($yazi_path) --chooser-file"
+    ^yazi --chooser-file
   }
   if $clear_cache {
-    nu -c $"($yazi_path) --clear-cache"
+    ^yazi --clear-cache
   }
   if $client_id {
-    nu -c $"($yazi_path) --client-id"
+    ^yazi --client-id
   }
   if $local_events {
-    nu -c $"($yazi_path) --local-events"
+    ^yazi --local-events
   }
   if $remote_events {
-    nu -c $"($yazi_path) --remote-events"
+    ^yazi --remote-events
   }
   if $debug {
-    nu -c $"($yazi_path) --debug"
+    ^yazi --debug
   }
 
-  nu -c $"($yazi_path)"
+  ^yazi
 }
