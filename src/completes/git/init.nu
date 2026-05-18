@@ -1,10 +1,3 @@
-source .../util/get-path.nu
-
-let gitpath = get-path git
-
-
-
-
 # usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
 #            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
 #            [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
