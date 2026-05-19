@@ -1,5 +1,3 @@
-def "git add" [
-  ...files: string
-] {
-  ^git add ...($files)
-}
+extern "git add" [
+  ...args: string
+]
